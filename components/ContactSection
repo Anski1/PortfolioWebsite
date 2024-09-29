@@ -1,0 +1,69 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const ContactSection = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    // Handle form submission (e.g., send to API)
+    setSubmitted(true);
+  };
+
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="w-full max-w-4xl text-center"
+    >
+      <h2 className="text-3xl font-semibold mb-6 text-gray-800">Contact Me</h2>
+      {submitted ? (
+        <p className="text-green-600">Thank you for your message! I'll get back to you soon.</p>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            rows="5"
+          ></textarea>
+          <button
+            type="submit"
+            className="px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors"
+          >
+            Send Message
+          </button>
+        </form>
+      )}
+    </motion.section>
+  );
+};
+
+export default ContactSection;

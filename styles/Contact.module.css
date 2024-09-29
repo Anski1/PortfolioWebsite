@@ -1,0 +1,21 @@
+/* styles/Contact.module.css */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .textField {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .submitButton {
+    margin-top: 1rem;
+  }
+  
+  .messageBar {
+    margin-top: 1rem;
+  }
+  

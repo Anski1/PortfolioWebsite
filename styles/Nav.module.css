@@ -1,0 +1,31 @@
+/* Nav.module.css */
+.nav {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+  }
+  
+  .navList {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navItem {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .navLink {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .navLink:hover {
+    color: #0070f3;
+  }
+  
