@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    output: 'export',
+    basePath: '/PortfolioWebsite', // Replace with your repository name if needed
+  };
+  
+  export default nextConfig;
+  
